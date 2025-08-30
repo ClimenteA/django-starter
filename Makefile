@@ -42,4 +42,4 @@ proxylogs:
 	docker compose -p proxy -f docker-compose.proxy.yml logs external-caddy-proxy -ft
 
 appexec:
-	docker compose -p app -f docker-compose.yml exec imposting-web bash
+	docker compose -p app -f docker-compose.yml exec app bash

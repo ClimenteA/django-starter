@@ -2,13 +2,13 @@
 set -e
 
 echo "Making migrations..."
-python manage.py makemigrations
+python webapp/manage.py makemigrations
 
 echo "Running migrations..."
-python manage.py migrate
+python webapp/manage.py migrate
 
 echo "Checking if superuser exists..."
-python manage.py shell -c "
+python webapp/manage.py shell -c "
 from django.contrib.auth import get_user_model
 import os
 User = get_user_model()

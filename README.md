@@ -2,6 +2,8 @@
 
 A basic Django boilerplate. 
 
+
+
 Packages:
 - uv
 - picocss
@@ -9,7 +11,6 @@ Packages:
 
 
 ## Quickstart
-
 
 In development:
 
@@ -19,12 +20,19 @@ In development:
 - make migrate;
 - make dev;
 
+In production:
 
-Dockerize:
-
-- make build;
+- update Caddyfile with your domain;
+- docker network create web (one-time);
 - switch DEBUG to 0;
 - make collectstatic;
+- make build;
+- make start;
+- make stop;
+- make applogs;
+- make proxylogs;
+
+
 
 
 
