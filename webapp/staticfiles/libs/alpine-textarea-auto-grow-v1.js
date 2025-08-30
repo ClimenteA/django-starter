@@ -1,1 +1,0 @@
-(()=>{function i(e){e.directive("grow",t=>{t.addEventListener("input",()=>{t.style.height="auto",t.style.height=`${t.scrollHeight}px`})})}document.addEventListener("alpine:init",()=>window.Alpine.plugin(i));})();

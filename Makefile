@@ -7,6 +7,7 @@ migrate:
 
 collectstatic:
 	uv run webapp/manage.py collectstatic
+	rm -rf webapp/staticfiles/django-browser-reload
 
 # Before this run: docker network create web - one-time thing useful for using same proxy for multiple docker apps
 # OR you can add caddy proxy inside docker-compose.yml if you are runnig just this app

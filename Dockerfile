@@ -8,7 +8,6 @@ RUN uv sync
 
 ENV PATH="/app/.venv/bin:$PATH"
 
-COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN chmod +x entrypoint.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
