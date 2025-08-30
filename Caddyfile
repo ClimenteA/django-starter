@@ -1,0 +1,14 @@
+app.localhost {
+	reverse_proxy app:8000
+
+    handle_path /static/* {
+        root * /webapp/staticfiles
+        file_server
+    }
+
+    handle_path /media/* {
+        root * /webapp/media
+        file_server
+    }
+
+}

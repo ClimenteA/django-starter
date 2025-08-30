@@ -1,2 +1,7 @@
-# django-starter
-A basic Django boilerplate.
+# Django Starter
+
+A basic Django boilerplate. 
+
+
+- uv
+- picocss

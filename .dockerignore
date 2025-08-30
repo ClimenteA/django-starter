@@ -1,0 +1,11 @@
+.venv
+.ipynb_checkpoints
+__pycache__
+./webapp/cache
+./webapp/data
+./webapp/logs
+.env.example
+*.ipynb
+*.yml
+Caddyfile
+*.md

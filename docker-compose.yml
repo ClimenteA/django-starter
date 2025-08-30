@@ -1,0 +1,26 @@
+services:
+
+  app:
+    container_name: app
+    build: .
+    command: uv run waitress-serve --threads 6 --listen=*:8000 webapp.wsgi:application
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./webapp:/app
+      - ./entrypoint.sh:/app/entrypoint.sh
+      - shared-tmp:/tmp
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./webapp/.env
+    networks:
+      - web
+
+
+networks:
+  web:
+    external: true
+
+volumes:
+  shared-tmp:

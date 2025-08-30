@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page-meta %} SEO stuff {% endblock %}
+
+{% block page-title %} Super app {% endblock %}
+
+
+{% block body %}
+
+
+<div style="display: flex; flex-direction: column; align-items: center; margin-top: 2rem;">
+
+    <h1 style="text-align: center;">
+        What value the user can get from our app
+    </h1>
+    
+    <p style="text-align: center;">
+        More details on how you can get value from this app.
+    </p>
+
+    <img height="520px" width="520px" style="margin-top: 2rem; border-radius: 18px;" src="{% static 'pics/hero-image.jpg' %}" alt="">
+
+    <a style="margin-top: 2rem;" role="button" href="#TODO">
+        Make an account
+    </a>
+    <small style="margin-top: 2rem; text-align: center;" class="pico-color-slate-550">
+        Check below for more details
+        <br>
+        <i class="bi bi-chevron-down"></i>
+    </small>
+
+</div>
+
+
+
+<table class="container" style="margin-top: 6rem;">
+    <thead>
+        <tr>
+            <th>🛑 Without Our App</th>
+            <th>✅ With Our App</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Pain point</td>
+            <td>Fix 🤩</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<style>
+    .img-not-fullscreen {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+    .img-fullscreen {
+        width: 98vw;
+        height: auto;
+    }
+
+    @media (max-width: 600px) {
+        .img-not-fullscreen {
+            max-width: 100%;
+        }
+    }
+
+    .product-showcase-container {
+        display: flex; flex-direction: column; justify-content: center;
+    }
+
+    .img-container {
+        display: flex; justify-content: center;
+    }
+
+</style>
+
+
+
+<div class="container" style="margin-top: 6rem;">
+
+    <hgroup style="display: block; text-align: center; margin-bottom: 4rem;">
+        <h1>Screenshots</h1>
+        <p>Some screenshots of the app. It's simple. Nothing fancy. Just post.</p>
+    </hgroup>
+
+    <div style="display: flex; flex-direction: column; gap: 2rem;">
+
+        <div class="product-showcase-container">
+            <strong>Integrations</strong>
+            <p>
+                Allow imposting.com to post on your behalf. Click on Authorize button.
+                If you don't see your posts published come on this page and click on Authorize button again (the token
+                expired and the app needs a new one).
+            </p>
+
+            <div x-data="{fullScreen: false}" class="img-container">
+
+                <div x-show="!fullScreen">
+                    <img 
+                    x-cloak x-show="theme === 'dark'" src="{% static 'pics/dark-integrations.png' %}" alt="imposting integrations"
+                    @click="fullScreen = true"
+                    class="img-not-fullscreen">
+                    
+                    <img 
+                    x-cloak x-show="theme === 'light'" src="{% static 'pics/light-integrations.png' %}" alt="imposting integrations"
+                    @click="fullScreen = true"
+                    class="img-not-fullscreen">
+
+                </div>
+
+                <dialog :open="fullScreen" @click="fullScreen = false">
+
+                    <img x-cloak x-show="theme === 'dark'" src="{% static 'pics/dark-integrations.png' %}" alt="imposting integrations"
+                        class="img-fullscreen">
+
+                    <img x-cloak x-show="theme === 'light'" src="{% static 'pics/light-integrations.png' %}" alt="imposting integrations"
+                        class="img-fullscreen">
+                
+                </dialog>
+            </div>
+        </div>
+        
+        </div>
+    </div>
+
+</div>
+
+
+<div id="pricing" class="container" style="display: flex; flex-direction: column; margin-top: 6rem; margin-bottom: 6rem;">
+
+    <hgroup style="display: block; text-align: center; margin-bottom: 4rem;">
+        <h1>Pricing</h1>
+        <p>Prices without the marketing psychology degree. You get 7 days trial to see if it's worth it for you.</p>
+    </hgroup>
+
+    <div class="grid">
+
+
+        <article style="display: flex; align-items: center; flex-direction: column;">
+
+            <h2 style="margin-top: 1rem;">👨‍💻 Label 1</h2>
+
+            <strong style="margin-top: 1rem;">PLAN 1 PRICE</strong>
+
+            <p style="text-align: center; margin-top: 1rem;" class="pico-color-slate-550">
+                PLAN 1 description
+            </p>
+
+            <a target="_blank" style="margin-top: 2rem; margin-bottom: 2rem;" class="secondary" role="button" href="https://github.com/ClimenteA/social-media-posts-scheduler">
+                Go to plan 1
+            </a>
+    
+        </article>
+
+
+        <article style="display: flex; align-items: center; flex-direction: column; border: 2px solid gold;">
+            
+            <h2 style="margin-top: 1rem;">🫡 Label 2</h2>
+
+            <strong style="margin-top: 1rem;">PLAN 2 PRICE</strong>
+
+            <p style="text-align: center; margin-top: 1rem;" :class="theme === 'dark' ? 'pico-color-slate-400': 'pico-color-slate-650'">
+                PLAN 2 description
+            </p>
+
+            <a style="margin-top: 2rem; margin-bottom: 2rem;" role="button" href="#TODO">
+                Go to plan 2
+            </a>
+    
+        </article>
+    
+        <article style="display: flex; align-items: center; flex-direction: column;">
+
+            <h2 style="margin-top: 1rem;">😎 Label 3</h2>
+
+            <strong style="margin-top: 1rem;">PLAN 3 PRICE</strong>
+
+            <p style="text-align: center; margin-top: 1rem;" class="pico-color-slate-550">
+                PLAN 3 description
+            </p>
+
+            <a style="margin-top: 2rem; margin-bottom: 2rem;" class="secondary" role="button" href="#TODO">
+                Go to plan 3
+            </a>
+    
+        </article>
+    
+
+    </div>        
+
+</div>
+
+<div id="faq" class="container" style="display: flex; flex-direction: column; margin-top: 6rem; margin-bottom: 6rem;">
+
+    <hgroup style="display: block; text-align: center; margin-bottom: 4rem;">
+        <h1>FAQ</h1>
+        <p>Here are probably the answers for all your questions.</p>
+    </hgroup>
+
+    <details>
+        <summary>How is this useful for me?</summary>
+        <p>
+            TODO
+        </p>
+    </details>
+
+</div>
+
+
+<div style="display: flex; flex-direction: column; justify-content: center;">
+    <h1 style="text-align: center;">😁 Looks good for you?</h1>
+
+    <a style="margin-top: 2rem;" role="button" href="#TODO">
+        Create an account
+    </a>
+
+    <small style="margin-top: 2rem; text-align: center;" class="pico-color-yellow-200">
+        You'll get 7 days trial to test it!
+    </small>
+
+</div>
+
+{% endblock %}

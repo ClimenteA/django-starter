@@ -1,0 +1,25 @@
+services:
+
+  external-caddy-proxy:
+    container_name: external-caddy-proxy
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./webapp/media:/webapp/media
+      - ./webapp/staticfiles:/webapp/staticfiles
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - web
+ 
+networks:
+  web:
+    external: true
+
+volumes:
+  caddy_data:
+  caddy_config:
