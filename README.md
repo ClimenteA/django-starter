@@ -9,6 +9,10 @@ Features:
 - [Caddy proxy](https://caddyserver.com/);
 - SEO sitemap.xml setup;
 - Templates hot reload (django-browser-reload);
+- dark/light mode (picocss);
+- SQLite db (yes it's enough);
+- Change theme by swiching `pico.jade.min.css` with another css file from [picocss website](https://picocss.com/docs/version-picker);
+
 
 ## Quickstart
 
