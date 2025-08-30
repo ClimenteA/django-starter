@@ -36,7 +36,7 @@ In production:
 - make applogs;
 - make proxylogs;
 
-> NOTE: If you need google sign in or external storage on Cloudflare R2 checkout this [repo](https://github.com/ClimenteA/social-media-posts-scheduler) 
+> NOTE: If you need google sign in or external storage on Cloudflare R2 checkout [this repo](https://github.com/ClimenteA/social-media-posts-scheduler) 
 
 ## Landing page
 
