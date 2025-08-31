@@ -57,9 +57,11 @@
         height: auto;
         cursor: pointer;
     }
+
     .img-fullscreen {
         width: 98vw;
-        height: auto;
+        height: 98vh;
+        object-fit: contain;
     }
 
     @media (max-width: 600px) {
@@ -69,13 +71,15 @@
     }
 
     .product-showcase-container {
-        display: flex; flex-direction: column; justify-content: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .img-container {
-        display: flex; justify-content: center;
+        display: flex;
+        justify-content: center;
     }
-
 </style>
 
 
