@@ -1,14 +1,16 @@
 import os
 from pathlib import Path
-from dotenv import load_dotenv
 
+from dotenv import load_dotenv
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 logpath = BASE_DIR / "logs/logs.log"
 
+envpath = BASE_DIR / ".env"
+assert envpath.exists(), "Please create and fill the .env file!"
 
-load_dotenv(BASE_DIR / ".env")
+load_dotenv(envpath)
 
 
 DEBUG = os.getenv("DEBUG") == "1"
